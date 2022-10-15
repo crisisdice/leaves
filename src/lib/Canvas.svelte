@@ -100,8 +100,25 @@
 
 <div>
   <canvas id="canvas" height={HEIGHT} width={WIDTH} />
-  <h3>Edit leaves</h3>
-  <input type="number" min="0" max={MAX_LEAVES} on:change={onChange} />
-  <input type="range" min={0.05} max={5} step="0.0001" on:input={onInput} />
+  <h3>Controls </h3>
+  <div class="controls">
+    <label>Number of leaves:
+      <input type="number" min="0" max={MAX_LEAVES} on:change={onChange} />
+    </label>
+    <label>𝛿 between leaves:
+      <input class="slider" type="range" min={0.05} max={5} step="0.0001" on:input={onInput} />
+    </label>
+  </div>
 </div>
 
+<style>
+  .controls {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  .slider {
+    height: 7px;
+  }
+</style>
